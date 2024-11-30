@@ -1,97 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I♡NY Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #FFFFFF;
+            color: #191919;
+        }
+        .dark-mode {
+            background-color: #191919;
+            color: #FFFFFF;
+        }
+        .navbar {
+            background-color: #FF0000;
+        }
+        .btn-dark-mode {
+            background-color: #FF0000;
+            color: white;
+        }
+        .profile-card {
+            perspective: 1000px;
+        }
+        .profile-inner {
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        .profile-card:hover .profile-inner {
+            transform: rotateY(180deg);
+        }
+        .profile-front, .profile-back {
+            position: absolute;
+            backface-visibility: hidden;
+            width: 100%;
+            height: 100%;
+        }
+        .profile-back {
+            transform: rotateY(180deg);
+            background-color: #F8F9FA;
+            color: #191919;
+        }
+        .skills-item:hover {
+            border: 2px solid #FF0000;
+            background-color: #FFF5F5;
+        }
+    </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">My Portfolio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">I♡NY</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <button class="btn btn-dark-mode ms-3" id="darkModeToggle">Toggle Dark Mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section id="about" class="container my-5 text-center">
+        <div class="profile-card mx-auto" style="width: 300px; height: 200px;">
+            <div class="profile-inner">
+                <div class="profile-front bg-light d-flex align-items-center justify-content-center">
+                    <div>
+                        <h3>Nayoung Lee</h3>
+                        <p>Cloud Engineer</p>
+                        <p>nayeo2@naver.com</p>
+                    </div>
+                </div>
+                <div class="profile-back d-flex align-items-center justify-content-center">
+                    <div>
+                        <h4>Education & Certificates</h4>
+                        <p>Seoul Women's University</p>
+                        <p>AWS Cloud Practitioner, SQLD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container my-5">
+        <h1 class="text-center">Skills</h1>
+        <div class="row">
+            <div class="col-md-4 skills-item p-3">
+                <h4>CI/CD</h4>
+                <p>Experience with Jenkins pipelines.</p>
+            </div>
+            <div class="col-md-4 skills-item p-3">
+                <h4>Cloud</h4>
+                <p>AWS 3-Tier Architecture.</p>
+            </div>
+            <div class="col-md-4 skills-item p-3">
+                <h4>Automation</h4>
+                <p>Proficient in Terraform and Ansible.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container my-5">
+        <h1 class="text-center">Projects</h1>
+        <ul>
+            <li>Deepfake Audio Detection using GAN</li>
+            <li>Cloud Automation with Terraform</li>
         </ul>
-      </div>
-    </div>
-  </nav>
+    </section>
 
-  <!-- Hero Section -->
-  <header class="bg-primary text-white text-center py-5">
-    <div class="container">
-      <h1>Welcome to My Portfolio</h1>
-      <p class="lead">Showcasing my skills and projects</p>
-    </div>
-  </header>
+    <!-- Footer -->
+    <footer id="contact" class="text-center py-4">
+        <p>Contact: nayoung@example.com</p>
+        <p>&copy; 2024 Nayoung Lee</p>
+    </footer>
 
-  <!-- About Section -->
-  <section id="about" class="py-5">
-    <div class="container text-center">
-      <h2>About Me</h2>
-      <p class="mt-3">I am a passionate developer studying Software Convergence at Seoul Women's University. I enjoy creating meaningful and user-friendly applications.</p>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center">My Projects</h2>
-      <div class="row mt-4">
-        <div class="col-md-4">
-          <div class="card">
-            <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Project 1">
-            <div class="card-body">
-              <h5 class="card-title">Project 1</h5>
-              <p class="card-text">Description of Project 1.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Project 2">
-            <div class="card-body">
-              <h5 class="card-title">Project 2</h5>
-              <p class="card-text">Description of Project 2.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Project 3">
-            <div class="card-body">
-              <h5 class="card-title">Project 3</h5>
-              <p class="card-text">Description of Project 3.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-5">
-    <div class="container text-center">
-      <h2>Contact Me</h2>
-      <p class="mt-3">Feel free to reach out to me via email or social media!</p>
-      <a href="mailto:youremail@example.com" class="btn btn-primary mt-3">Email Me</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p>© 2024 My Portfolio. All rights reserved.</p>
-  </footer>
-
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const toggleButton = document.getElementById('darkModeToggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

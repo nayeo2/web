@@ -1,0 +1,400 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* 기본 네비게이션바 스타일 */
+.navbar {
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    background: white; /* 기본 배경은 흰색 */
+}
+
+/* 기본 스타일 */
+.navbar .navbar-brand {
+    color: #0f0f0f; /* 기본 색상 */
+}
+
+.navbar .nav-link {
+    color: #000;  /* 기본 색상 */
+}
+
+/* 네비게이션 링크 활성화 시 스타일 */
+.navbar .nav-link.active {
+    font-weight: bold;
+    color: red !important;
+    text-decoration: underline;
+}
+
+/* 드롭다운 화살표 제거 */
+.navbar .nav-item.dropdown .nav-link::after {
+    content: none; /* 화살표 제거 */
+}
+
+/* 드롭다운 메뉴 스타일 */
+.navbar .navbar-nav .dropdown-menu {
+    background-color: white;  /* 기본 배경색 */
+    border: none; /* 경계선 제거 */
+    box-shadow: none; /* 그림자 제거 */
+    margin-top: 0;  /* 드롭다운 메뉴와 네비게이션 사이의 공간 제거 */
+}
+
+/* 드롭다운 메뉴 항목 스타일 */
+.navbar .navbar-nav .dropdown-menu .dropdown-item {
+    font-size: 0.875rem;  /* 글자 크기 줄이기 */
+    color: #000;  /* 기본 색상 */
+}
+
+/* 마우스를 올렸을 때 드롭다운 항목 스타일 */
+.navbar .navbar-nav .dropdown-menu .dropdown-item:hover {
+    background-color: #f8f9fa;  /* 배경색 변경 */
+    color: #000;  /* 텍스트 색상 유지 */
+}
+
+/* 클릭 시 스타일 */
+.navbar .navbar-nav .dropdown-menu .dropdown-item:active {
+    font-weight: bold;  /* 글자 두껍게 */
+    color: red;  /* 빨간색 */
+    text-decoration: underline;  /* 밑줄 추가 */
+}
+
+/* 다크모드에서 네비게이션바 스타일 */
+body.dark-mode .navbar {
+    background-color: #0f0f0f !important; /* 배경 어두운색 */
+}
+
+body.dark-mode .navbar .navbar-brand {
+    color: #fff !important;  /* navbar-brand 텍스트 색상 */
+}
+
+/* 다크모드에서 네비게이션 링크 활성화 시 스타일 */
+body.dark-mode .navbar .nav-link.active {
+    color: #ff6347 !important; /* 다크모드에서 활성화된 링크 색을 밝은 색으로 변경 */
+    text-decoration: underline;
+}
+
+/* 다크모드에서 nav-link 기본 스타일 */
+body.dark-mode .navbar .nav-link {
+    color: #fff !important;  /* 다크모드에서는 기본 링크 색을 연한 회색으로 */
+}
+
+/* 다크모드에서 nav-link hover 스타일 */
+body.dark-mode .navbar .nav-link:hover {
+    color: #fff !important;  /* 네비게이션 링크 hover 색상 */
+}
+
+.hero {
+    margin: 50px 0;
+}
+
+.hero h1 { /* 맨위 I NY */
+    font-size: 10rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+.profile-card {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #0f0f0f;
+    max-width: 800px;
+    height: 400px; /* 고정된 높이 추가 */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: height 0.3s ease; /* 높이 변화에 애니메이션 추가 */
+}
+
+/* 플립된 프로필 카드와 기본 카드의 높이를 같게 설정 */
+.profile-card.flipped {
+    height: 400px; /* 기본 카드와 동일한 높이 */
+}
+
+.profile-card img {
+    width: 35%;
+    height: auto;
+}
+
+.profile-info { /* 내 정보보 */
+    width: 50%;
+    text-align: left;
+}
+
+.profile-info h2 { /* 내 정보보 */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.profile-info p { 
+    margin: 10px 0;
+    font-size: 1.0rem;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* 기본 flip-btn 스타일 */
+.profile-card .flip-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    display: flex; /* 플렉스박스 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    color: #0f0f0f;
+    text-decoration: none;
+    border: 1px solid #0f0f0f;
+    background-color: transparent;
+    width: 40px; /* 버튼의 너비 */
+    height: 40px; /* 버튼의 높이 */
+    border-radius: 0px; /* 둥근 모서리 제거 */
+    transition: background-color 0.3s, color 0.3s;
+    padding: 0; /* 아이콘을 더 정확히 중앙에 위치시키기 위해 패딩 제거 */
+}
+
+/* hover 상태 */
+.profile-card .flip-btn:hover {
+    background-color: #0f0f0f;
+    color: #fff;
+}
+
+
+
+/* 다크모드에서 flip-btn 스타일 */
+body.dark-mode .profile-card .flip-btn {
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: #0f0f0f;
+}
+
+/* 다크모드에서 flip-btn hover 상태 */
+body.dark-mode .profile-card .flip-btn:hover {
+    background-color: #0f0f0f;
+    color: #fff;
+}
+
+
+/* flip-content 기본 상태 학력 자격증 */
+.profile-card .flip-content {
+    display: none;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+/* flip-content 플립 상태 */
+.profile-card.flipped .flip-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.profile-card.flipped img,
+.profile-card.flipped .profile-info {
+    display: none;
+}
+
+.material-symbols-outlined { /* 아이콘 */
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.info-sections {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.info-sections div {
+    text-align: left;
+    max-width: 180px;
+}
+
+.info-sections h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.portfolio-section { /* 포트폴리오의 가장 작은 글씨 */
+    margin-top: 50px;
+}
+
+.portfolio-section h2 { /* 스킬, 프로젝트 글씨 */
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.portfolio-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.portfolio-item h3 { /* 포트폴리오의 중간 작은 글씨 */
+    font-size: 1rem;
+    transition: color 0.3s;    
+    font-weight: bold;
+    text-align: left;
+}
+
+.portfolio-item h3:hover {
+    color: red;    
+    font-weight: bold;
+    text-align: left;
+}
+
+.portfolio-item p { /* 포트폴리오의 가장 작은 글씨 */
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+#contact h2 { /* 연락처 글씨 */
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#contact div p { /* 연락처 번호랑 메일 주소글씨 */
+    font-size: 1rem;
+    margin: 0; 
+}
+
+/* 기본 버튼 스타일 */
+.button-custom {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #0f0f0f;
+    text-decoration: none;
+    border: 1px solid #0f0f0f;
+    background-color: transparent;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 버튼 hover 상태 */
+.button-custom:hover {
+    background-color: #0f0f0f;
+    color: #fff;
+}
+
+/* 다크모드에서 버튼 스타일 */
+body.dark-mode .button-custom {
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: #0f0f0f;
+}
+
+/* 다크모드에서 버튼 hover 상태 */
+body.dark-mode .button-custom:hover {
+    background-color: #0f0f0f;
+    color: #fff;
+}
+
+
+a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 기본 텍스트 색상 사용 */
+}
+
+
+        /* 위로 가기 버튼 스타일 */
+
+            /* 버튼 안의 아이콘 스타일 */
+            .scroll-to-top .material-icons-outlined {
+                vertical-align: middle; /* 아이콘 수직 정렬 */
+            }
+
+
+/* 다크 모드 버튼 */
+.dark-mode-btn {
+    position: fixed;
+    bottom: 80px; /* 위로 가기 버튼과 겹치지 않게 위치 */
+    right: 20px;
+    background-color: #0f0f0f;
+    color: white;
+    font-size: 18px; /* 글씨 크기 조정 */
+    border: none;
+    border-radius: 50%;
+    padding: 10px; /* 크기를 줄임 */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+    
+            .dark-mode-btn:hover {
+                background-color: #0f0f0f;
+            }
+
+            .scroll-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: #0f0f0f;
+                color: white;
+                font-size: 18px; /* 글씨 크기 조정 */
+                border: none;
+                border-radius: 50%;
+                padding: 10px; /* 크기를 줄임 */
+                cursor: pointer;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: background-color 0.3s;
+            }
+    
+            .scroll-to-top:hover {
+                background-color: #0f0f0f;
+            }
+    
+            /* 다크 모드 활성화 시 페이지 색상 변경 */
+            body.dark-mode {
+                background-color: #121212;
+                color: white;
+            }
+
+            html {
+                scroll-padding-top: 80px; /* 네비게이션 바의 높이에 맞게 조정 */
+            }
+            /* 기본 버튼 스타일 */
+.btn-add {
+    background-color: white; /* 기본 배경색 하얀색 */
+    border: none; /* 테두리 없애기 */
+    font-size: 24px; /* 버튼 글자 크기 */
+    padding: 10px 20px; /* 버튼 내 여백 */
+    cursor: pointer; /* 클릭 시 커서 변화 */
+    border-radius: 5px; /* 둥근 모서리 */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* 배경색 변화와 애니메이션 효과 */
+}
+
+/* 버튼 hover 시 배경색 변화 */
+.btn-add:hover {
+    background-color: #f0f0f0; /* 배경색 살짝 어두워지기 */
+    transform: scale(1.1); /* 버튼 크기 약간 키우기 */
+}
+
+/* 다크모드에서 버튼 스타일 */
+body.dark-mode .btn-add {
+    background-color: #121212; /* 어두운 배경 */
+    color: white; /* 글자색 하얀색 */
+}
+
+/* 다크모드에서 버튼 hover 시 스타일 */
+body.dark-mode .btn-add:hover {
+    background-color: #555; /* 다크모드에서 hover 시 배경색 */
+    transform: scale(1.1); /* 크기 변화 */
+}

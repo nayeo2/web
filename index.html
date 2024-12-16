@@ -1,138 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I♡NY Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background-color: #FFFFFF;
-            color: #191919;
-        }
-        .dark-mode {
-            background-color: #191919;
-            color: #FFFFFF;
-        }
-        .navbar {
-            background-color: #FF0000;
-        }
-        .btn-dark-mode {
-            background-color: #FF0000;
-            color: white;
-        }
-        .profile-card {
-            perspective: 1000px;
-        }
-        .profile-inner {
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-            position: relative;
-        }
-        .profile-card:hover .profile-inner {
-            transform: rotateY(180deg);
-        }
-        .profile-front, .profile-back {
-            position: absolute;
-            backface-visibility: hidden;
-            width: 100%;
-            height: 100%;
-        }
-        .profile-back {
-            transform: rotateY(180deg);
-            background-color: #F8F9FA;
-            color: #191919;
-        }
-        .skills-item:hover {
-            border: 2px solid #FF0000;
-            background-color: #FFF5F5;
-        }
-    </style>
+    <title>I ♡ NY</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">I♡NY</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-                <button class="btn btn-dark-mode ms-3" id="darkModeToggle">Toggle Dark Mode</button>
-            </div>
+
+    <button class="scroll-to-top" onclick="scrollToTop()">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
+    <button class="dark-mode-btn" onclick="toggleDarkMode()">
+        <span class="material-symbols-outlined">dark_mode</span> </button>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="font-weight: bold;">I <span style="color: rgb(207, 0, 0);">♡</span> NY</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#profile">Profile</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="navbarPortfolio" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Portfolio
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarPortfolio">
+                        <li><a class="dropdown-item" href="#skills">Skills</a></li>
+                        <li><a class="dropdown-item" href="#projects">Projects</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
+
+
+    <!-- Hero Section -->
+    <section class="hero" style="margin-top: 30px;">
+        <h1 style="margin-bottom: 30px;">I<span style="color: rgb(207, 0, 0);">♡</span>NY</h1>
+        <p>안녕하세요. 클라우드 엔지니어 이나영입니다.<br>이렇고 저렇고 이래서 이런 클라우드 엔지니어가 되고 싶습니다.</p>
+    </section>
 
     <!-- Profile Section -->
-    <section id="about" class="container my-5 text-center">
-        <div class="profile-card mx-auto" style="width: 300px; height: 200px;">
-            <div class="profile-inner">
-                <div class="profile-front bg-light d-flex align-items-center justify-content-center">
-                    <div>
-                        <h3>Nayoung Lee</h3>
-                        <p>Cloud Engineer</p>
-                        <p>nayeo2@naver.com</p>
-                    </div>
+    <section id="profile" class="profile-card">
+        <img src="images/mypic.jpg" alt="Profile Picture">
+        <div class="profile-info">
+            <h2 style="margin-bottom: 20px; text-decoration: underline;"><strong>Profile</strong></h2>
+            <p><span class="material-symbols-outlined">account_circle</span> 이나영</p>
+            <p><span class="material-symbols-outlined">smartphone</span>010-2082-9927</p>
+            <p><span class="material-symbols-outlined">mail</span><a href="mailto:nayeo2@naver.com">nayeo2@naver.com</a></p>
+            <p><span class="material-symbols-outlined">hub</span><a href="https://github.com/nayeo2" target="_blank">Github</a></p>
+            <p><span class="material-symbols-outlined">event_note</span><a href="https://nayeo2.tistory.com/" target="_blank">Tistory</a></p>
+        </div>
+        <button class="btn btn-secondary flip-btn"><span class="material-symbols-outlined">search</span></button>
+        <div class="flip-content">
+            <div class="info-sections">
+                <div>
+                    <h3 style="margin-bottom: 30px; text-decoration: underline;">Certificate</h3>
+                    <p>정보처리기사</p>
+                    <p>SQLD</p>
+                    <p>AWS Cloud Practitioner</p>
+                    <p>TOEIC NNN</p>
                 </div>
-                <div class="profile-back d-flex align-items-center justify-content-center">
-                    <div>
-                        <h4>Education & Certificates</h4>
-                        <p>Seoul Women's University</p>
-                        <p>AWS Cloud Practitioner, SQLD</p>
-                    </div>
+                <div>
+                    <h3 style="margin-bottom: 30px; text-decoration: underline;">Education</h3>
+                    <p>서울여자대학교 정보보호학과 졸업</p>
+                    <p> 2023 종단형 PBL 팀프로젝트 대상</p>
+                    <p> 개인정보보호 혁신인재 양성분야 보고회 대상</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="text-center mt-4">
+        <a href="#skills" class="button-custom" style="margin-bottom: 300px;">포트폴리오 보러가기</a>
+    </div> 
 
     <!-- Skills Section -->
-    <section id="skills" class="container my-5">
-        <h1 class="text-center">Skills</h1>
+    <section id="skills" class="portfolio-section container mt-5" style="margin-bottom: 300px;">
+        <h2>Main Skills</h2>
         <div class="row">
-            <div class="col-md-4 skills-item p-3">
-                <h4>CI/CD</h4>
-                <p>Experience with Jenkins pipelines.</p>
+            <div class="col-md-6 portfolio-item">
+                <h3>DevOps</h3>
+                <p>젠킨스로 CI/CD 파이프라인 구축 및 다양한 배포방식으로 배포한 경험이 있습니다.</p>
+                <p>도커를 활용하여 컨테이너 기반 애플리케이션 배포와 Dockerfile을 작성하여 Dockerize 배포를 할 수 있습니다.</p>
+                <p>인프라 자동화를 위한 Ansible 플레이북 작성 및 운영 경험이 있습니다.</p>
             </div>
-            <div class="col-md-4 skills-item p-3">
-                <h4>Cloud</h4>
-                <p>AWS 3-Tier Architecture.</p>
-            </div>
-            <div class="col-md-4 skills-item p-3">
-                <h4>Automation</h4>
-                <p>Proficient in Terraform and Ansible.</p>
+            <div class="col-md-6 portfolio-item">
+                <h3>Cloud</h3>
+                <p>EC2, S3 등 주요 AWS 서비스로 3 Tier Architecture 구축이 가능합니다.</p>
+                <p>Terraform으로 코드형 인프라 구축 경험이 있습니다.</p>
+                <p>NHN Cloud와 KT Cloud로 이중화된 3 Tier Architecture 구축 경험이 있습니다.</p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-6 portfolio-item">
+                <h3>Programming</h3>
+                <p>Linux를 활용하여 시스템 관리 및 쉘 스크립트 작성을 통한 자동화가 가능합니다.</p>
+                <p>데이터 분석, 크롤링, 자동화 스크립트, AI 모델링, 웹 애플리케이션 개발 등 다양한 프로젝트에서 Python을 활용하였습니다.</p>
+            </div>
+            <div class="col-md-6 portfolio-item">
+                <h3>Plus</h3>
+                <p>MySQL로 데이터베이스 설계 및 최적화, 데이터 백업 및 복구 관리가 가능합니다.</p>
+                <p>모니터링 툴로 Grafana를 사용하여 데이터 시각화 및 이메일 알림을 구현했습니다.</p>
+                <p>메트릭 수집과 시각화를 수행하기 위해 Prometheus를 활용하였습니다.</p>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="#projects" class="button-custom">위 기술을 활용한 프로젝트 보러가기</a>
+        </div>        
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="container my-5">
-        <h1 class="text-center">Projects</h1>
-        <ul>
-            <li>Deepfake Audio Detection using GAN</li>
-            <li>Cloud Automation with Terraform</li>
-        </ul>
-    </section>
+<!-- Projects Section -->
+<section id="projects" class="portfolio-section container mt-5" style="margin-bottom: 100px;">
+    <h2 style="margin-bottom: 50px;">Projects</h2>
+    <div class="row">
+        <!-- 첫 번째 열 -->
+        <div class="col-md-4 mb-4">
+            <h4 style="font-size: 1rem; font-weight: bold; text-decoration: underline;">Infra</h4>
+            <div class="portfolio-item">
+                <img src="images/aws.jpg" alt="AWS 3 Tier Architecture" class="img-fluid mb-3">
+                <h3>AWS를 활용한 3 Tier Architecture 구축 프로젝트</h3>
+                <p>AWS 서비스 (EC2, S3)를 이용해 3 Tier 구조의 시스템을 구축하였으며, 고가용성 및 성능을 최적화했습니다.</p>
+            </div>
+        </div>
+        <!-- 두 번째 열 -->
+        <div class="col-md-4 mb-4">
+            <h4 style="font-size: 1rem; font-weight: bold; text-decoration: underline;">AI</h4>
+            <div class="portfolio-item">
+                <img src="images/audio_detection.png" alt="Audio Anomaly Detection" class="img-fluid mb-3">
+                <h3>AI를 활용한 비지도 기반 오디오 이상 탐지</h3>
+                <p>딥러닝 비지도 학습 모델을 활용해 데이터에서 이상 패턴을 탐지하는 오디오 분석 프로젝트입니다.</p>
+            </div>
+        </div>
+        <!-- 세 번째 열 (1행과 2행을 합침) -->
+<!-- 세 번째 열 (1행과 2행을 합침) -->
+<div class="col-md-4 mb-4" style="grid-column: span 2; display: flex; justify-content: center; align-items: center;">
+    
+    <button class="btn btn-add"><span class="material-symbols-outlined">add_circle</span></button>
+</div>
 
-    <!-- Footer -->
-    <footer id="contact" class="text-center py-4">
-        <p>Contact: nayoung@example.com</p>
-        <p>&copy; 2024 Nayoung Lee</p>
-    </footer>
+    <div class="row">
+        <!-- 네 번째 열 -->
+        <div class="col-md-4 mb-4">
+            <div class="portfolio-item">
+                <img src="images/nhn_cicd.png" alt="NHN Cloud CI/CD" class="img-fluid mb-3">
+                <h3>NHN Cloud를 활용한 CI/CD 환경 구축</h3>
+                <p>CI/CD 파이프라인을 통해 자동화된 배포와 테스트 환경을 구축했습니다.</p>
+            </div>
+        </div>
+        <!-- 다섯 번째 열 -->
+        <div class="col-md-4 mb-4">
+            <div class="portfolio-item">
+                <img src="images/url_detection.png" alt="Malware URL Detection" class="img-fluid mb-3">
+                <h3>머신러닝 기반 악성 URL 탐지</h3>
+                <p>머신러닝을 활용하여 스팸 및 악성 URL을 자동으로 분류하고 시각화했습니다.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
+
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="container mt-5" style="margin-bottom: 100px;">
+    <h2>Contact</h2>
+    <div class="d-flex justify-content-around align-items-center mt-4">
+        <div>
+            <span class="material-symbols-outlined" style="font-size: 40px; margin-bottom: 10px;">smartphone</span>
+            <p>010-2082-9927</p>
+        </div>
+        
+        <div>
+            <span class="material-symbols-outlined" style="font-size: 40px; margin-bottom: 10px;">mail</span>
+            <p><a href="mailto:nayeo2@naver.com">nayeo2@naver.com</a></p>
+        </div>
+        
+    </div>
+
+    
+
+</section>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const toggleButton = document.getElementById('darkModeToggle');
-        toggleButton.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
+        document.querySelector('.flip-btn').addEventListener('click', function() {
+            document.querySelector('.profile-card').classList.toggle('flipped');
+        });
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 페이지 맨 위로 스크롤하는 함수
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'  // 부드럽게 스크롤
+            });
+        }
+    </script>
+
+<script>
+    // 다크 모드 토글 함수
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+    }
+
+    // 페이지 맨 위로 스크롤하는 함수
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
 </body>
 </html>
